@@ -62,7 +62,7 @@ void setup() {
   ESC2.attach(5,1000,2000); // (pin, min pulse width, max pulse width in microseconds) 
   Serial.begin(9600);
 
-  // initESCs();
+  initESCs();
 
 }
 
