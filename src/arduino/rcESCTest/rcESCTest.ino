@@ -15,17 +15,17 @@ int pump0Pwm = 0;  // PWM signal for pwmp
 int pump1Pwm = 0;  // PWM signal for pwmp
 int pump2Pwm = 0;  // PWM signal for pwmp
 
-float amp0 = 1000; // amplitude of sinusoid (1000 is max, 0 is min)
-float freq0 = 1; // frequency of sinusoid in Hz
+float amp0 = 500; // amplitude of sinusoid (1000 is max, 0 is min)
+float freq0 = 0.5; // frequency of sinusoid in Hz
 float phi0 = 0;  // phase of sinusoid (in degrees)
 
-float amp1 = 1000; // amplitude of sinusoid (1000 is max, 0 is min)
-float freq1 = 1; // frequency of sinusoid in Hz
-float phi1 = 0;  // phase of sinusoid (in degrees)
+float amp1 = 500; // amplitude of sinusoid (1000 is max, 0 is min)
+float freq1 = 0.5; // frequency of sinusoid in Hz
+float phi1 = 120;  // phase of sinusoid (in degrees)
 
-float amp2 = 1000; // amplitude of sinusoid (1000 is max, 0 is min)
-float freq2 = 1; // frequency of sinusoid in Hz
-float phi2 = 0;  // phase of sinusoid (in degrees)
+float amp2 = 500; // amplitude of sinusoid (1000 is max, 0 is min)
+float freq2 = 0.5; // frequency of sinusoid in Hz
+float phi2 = 240;  // phase of sinusoid (in degrees)
 
 
 void initESCs(){
@@ -46,7 +46,13 @@ Initializes ESC to start running
     delay(5);                       // waits 15 ms for the servo to reach the position
   }
 
-  delay(2000);
+ ESC0.write(90);
+ ESC1.write(90);
+ ESC2.write(90);
+
+  
+
+  delay(500);
 
 }
 void setup() {
@@ -56,7 +62,7 @@ void setup() {
   ESC2.attach(5,1000,2000); // (pin, min pulse width, max pulse width in microseconds) 
   Serial.begin(9600);
 
-  initESC();
+  // initESCs();
 
 }
 
